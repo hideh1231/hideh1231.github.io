@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
@@ -11,57 +11,68 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout>
-
-    <div class="pb-12 mt-5">
-      <div class="text-xl py-1">Hey there 👋</div>
-      <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-      <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-      <div class="py-2">
-        <text class="text-lg">
-          I made this template for everyone who needs to create a personal website easily and quickly. This template includes Project Section, CV Section, Store, Paginated Blog, RSS Feed, SEO Friendly, Responsive Desing and 29 Visual themes. I hope you find it useful!
-          </text
-        >
-      </div>
-      <div class="mt-8">
-        <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-        <a href="https://github.com/manuelernestog/astro-modern-personal-website" target="_blank" class="btn btn-outline ml-5"> Get This template</a>
-      </div>
+  <div class="pb-12 mt-5">
+    <!-- <div class="text-xl py-1">Hey there 👋</div> -->
+    <div class="text-5xl font-bold">Hidekazu Nagamura (長村 秀一)</div>
+    <div class="text-3xl py-3 font-bold">
+      Ph.D Student at <a href="https://www.doshisha.ac.jp"
+        >Doshisha University</a
+      >
     </div>
-
-    <div>
-      <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="py-2">
+      <text class="text-lg">
+        <a href="https://www1.doshisha.ac.jp/~bioinfo/"
+          >同志社大学脳神経行動工学研究室</a
+        >（指導教員：小林耕太教授）の長村です。
+        私はヒトが考えるときに生じる自己や主観経験といった内的状態のメカニズムに興味があり、現在は自分の声に着目して感情や認知の関係性を心理実験や生体信号計測などを用いて調べています。
+        趣味は音楽、読書、サウナ、お茶です。
+        <!-- これまでは報酬意思決定やメタ認知について研究してきました。 -->
+      </text>
     </div>
+  </div>
 
-    <HorizontalCard
-      title="Demo Project 1"
-      img="/post_img.webp"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      url="#"
-      badge="NEW"
-    />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-    <div class="divider my-0"></div>
-    <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">Latest publications</div>
+  </div>
 
+  <div class="mb-5">
+    <div class="text-2xl w-full font-bold">Articles</div>
+  </div>
 
-    <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-    </div>
+  <ul class="list-decimal mx-6 mb-10 grid gap-2">
+    <li>
+      Uenaka, M., Nagamura, H., Okamoto, A., Hiryu, S., Kobayasi, K. I., &
+      Tamai, Y. (2022). Feasibility evaluation of transtympanic laser
+      stimulation of the cochlea from the outer ear. The Journal of the
+      Acoustical Society of America, 152(3), 1850.
+      <a href="https://doi.org/10.1121/10.0014241"
+        >https://doi.org/10.1121/10.0014241</a
+      >
+    </li>
+  </ul>
 
-    {
-      last_posts.map((post) => (
+  <div class="mb-5">
+    <div class="text-2xl w-full font-bold">Preprints</div>
+  </div>
+
+  <ul class="list-decimal mx-6 mb-10 grid gap-2">
+    <li>
+      Nagamura, H., Onishi, H., Hishitani, M., Murai, S., Osako, Y., & Kobayasi,
+      K. I. (2021). Reward priming differentially modulates enhancement and
+      inhibition in auditory decision-making. In bioRxiv (p. 2021.12.23.473984).
+      <a href="https://doi.org/10.1101/2021.12.23.473984"
+        >https://doi.org/10.1101/2021.12.23.473984</a
+      >
+    </li>
+  </ul>
+
+  <!-- <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <>
         <HorizontalCard
           title={post.data.title}
           img={post.data.heroImage}
@@ -69,8 +80,8 @@ const last_posts = posts.slice(0, 3);
           url={"/blog/" + post.slug}
           target="_self"
         />
-        <div class="divider my-0"></div>
-      ))
-    }
-
+        <div class="divider my-0" />
+      </>
+    ))
+  } -->
 </BaseLayout>

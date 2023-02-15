@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-modern-personal-website.netlify.app',
+  site: 'https://hideh1231.github.io',
   integrations: [mdx(), sitemap(), tailwind()]
 });
