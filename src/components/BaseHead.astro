@@ -4,9 +4,9 @@
 import "../styles/global.css";
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const { title, description, image } = Astro.props;
@@ -36,3 +36,16 @@ const { title, description, image } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
+
+<script
+  type="text/partytown"
+  src="https://www.googletagmanager.com/gtag/js?id=G-VNC6KL0YST"
+></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-VNC6KL0YST");
+</script>
