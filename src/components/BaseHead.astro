@@ -41,3 +41,11 @@ const { title, description, image } = Astro.props;
   type="text/partytown"
   src="https://www.googletagmanager.com/gtag/js?id=G-VNC6KL0YST"
 ></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-VNC6KL0YST");
+</script>
