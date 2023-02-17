@@ -6,7 +6,11 @@ import SideBar from "../components/SideBar.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const {
+  image,
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,6 +19,14 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
     <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-VNC6KL0YST");
+    </script>
     <div class="bg-base-100 drawer drawer-mobile">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col bg-base-100">
